@@ -22,9 +22,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(logger);
 
-app.use(router);
 app.use(authRoutes);
 app.use('/notes', authenticate, notesRoutes);
+app.use(router);
 
 app.use(notFoundHandler);
 app.use(celebrateErrors());
